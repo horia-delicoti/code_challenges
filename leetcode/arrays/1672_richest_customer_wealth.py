@@ -42,3 +42,6 @@ def maximumWealth(accounts):
 
 accounts = [[1,2,3, 2],[3,2,1,3]]
 print(maximumWealth(accounts))
+
+# time complexity = O(n x m)
+# space complexity = O(1)
