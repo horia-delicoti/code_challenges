@@ -34,5 +34,5 @@ def fizzBuzz(n):
 
 fizzBuzz(15)
 
-# Time complexity
-# Space complexity 
+# Time complexity: O(n)  - we have to iterate from one to n and find a value to store for each
+# Space complexity: O(1)  - is constant. 
