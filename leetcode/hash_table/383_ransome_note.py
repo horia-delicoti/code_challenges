@@ -13,3 +13,6 @@ ransomNote = "leetcode"
 magazine = "arrayodistlec"
 
 canConstruct(ransomNote, magazine)
+
+
+# Time Complexity O(n*m)
