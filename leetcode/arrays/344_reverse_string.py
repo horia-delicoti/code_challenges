@@ -5,11 +5,14 @@
 # Input: s = ["H","a","n","n","a","h"]
 # Output: ["h","a","n","n","a","H"]
 
-def reverseString(s):
-  left, right = 0, len(s) - 1
-  while left < right:
-    s[left], s[right] = s[right], s[left]
-    left, right = left + 1, right - 1
-  return s
+def reverse_string(word):
+    left, right = 0, len(word) - 1
 
-print(reverseString(["h","e","l","l","o"]))
+    while left < right:
+        word[left], word[right] = word[right], word[left]
+        left, right = left + 1, right - 1
+
+    return word
+
+word = ["h","e","l","l","o"]
+print(reverse_string(word))
