@@ -10,14 +10,7 @@
 # - instead of push(), append() is used to add elements to the top of the stack
 # - pop() removes the element in the LIFO order
 
-left_pairs = ['(', '[', '}']
-right_pairs = [')', ']', '}']
-
 def isValid(string):
-    """
-    :type s: str
-    :rtype: bool
-    """
 
     # The stack to keep track of opening brackets.
     stack = []
@@ -30,23 +23,15 @@ def isValid(string):
     for char in string:
 
         # If the character is an closing bracket
-        if char in mapping:
-
-            # Pop the topmost element from the stack, if it is non empty
-            # Otherwise assign a dummy value of '#' to the top_element variable
-            top_element = stack.pop() if stack else '#'
-
-            # The mapping for the opening bracket in our hash and the top
-            # element of the stack don't match, return False
-            if mapping[char] != top_element:
-                return False
-        else:
-            # We have an opening bracket, simply push it onto the stack.
+        if char in mapping.values():
             stack.append(char)
 
-    # In the end, if the stack is empty, then we have a valid expression.
-    # The stack won't be empty for cases like ((()
-    return not stack
+        elif char in mapping.keys():
+            if not stack or stack.pop() != mapping[char]:
+                return False
+    
+    return len(stack) == 0
 
-characters = "([)]"
+
+characters = "([)"
 print(isValid(characters))
