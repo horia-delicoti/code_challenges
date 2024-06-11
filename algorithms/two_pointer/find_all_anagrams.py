@@ -16,11 +16,10 @@ def find_all_anagrams(original, check):
     while right <= len(original):
         if isAnagram(original[left:right], check):
             res.append(left)
-        right += 1
         left += 1
+        right += 1
 
     return res
-        
 
 original = "cbaebabacd"
 check = "abc"
