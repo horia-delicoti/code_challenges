@@ -2,23 +2,25 @@
 # while still preserving whitespace and initial word order.
 
 def reverseWords(s):
-    def reverse(x: list, left: int, right: int):
+    def reverse(s, left, right):
         while left < right:
-            x[left], x[right] = x[right], x[left]
+            s[left], s[right] = s[right], s[left]
             right -= 1
             left += 1
-    
+
     s = list(s)
     l = 0
     for right in range(len(s)):
         if s[right] == " ":
-            reverse(s, l, right)
+            reverse(s, l, right - 1)
+            l = right + 1
         elif right == len(s) - 1:
             reverse(s, l, right)
             l = right + 1
     return "".join(s)
 
 
-s = "Let's take LeetCode contest"
+
+s = "Let's take Leetcode contest"
 
 print(reverseWords(s))
