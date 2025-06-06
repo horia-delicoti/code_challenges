@@ -8,14 +8,17 @@
 
 def two_sum(nums, target):
     n = len(nums)
-
-    for i in range(n-1):
-        for j in range(i+1, n):
+    for i in range(n):
+        print(f"Checking index {i}, value {nums[i]}")
+        for j in range(i + 1, n):
+            print(f"Checking index {j}, value {nums[j]}")
             if nums[i] + nums[j] == target:
                 return [i, j]
-    return []
 
 nums = [2, 7, 11, 15]
 target = 9
 
-print(two_sum(nums,target))
+print(two_sum(nums, target))
+
+# Time Complexity: O(n^2) - The solutions uses a nested loop to check each piar of numbers.
+# Space Complexity: 0(1) - Does not use any additional data structures that grow with input size.
