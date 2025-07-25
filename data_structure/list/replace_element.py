@@ -29,3 +29,6 @@ def replace_element(arr):
 arr = [17,18,5,4,6,1]
 
 replace_element(arr)
+
+# Time Complexity: O(n) because we traverse the array once.
+# Space Complexity: O(1) because we are not using any extra space.
