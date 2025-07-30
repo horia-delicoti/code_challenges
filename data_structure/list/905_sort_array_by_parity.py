@@ -6,16 +6,16 @@
 # Explanation: The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
 
 def sortArrayByParity(nums):
-  i = 0
-  j = len(nums) - 1
-
-  while i < j:
-    if nums[i] % 2 > nums[j] % 2:
-      nums[i], nums[j] = nums[j], nums[i]
-    
-    if nums[i] % 2 == 0:
-      i += 1
-    if nums[j] % 2 == 1:
-      j -= 1
-  
+  slow = 0
+  for fast in range(len(nums)):
+    if nums[fast] % 2 == 0:
+      nums[fast], nums[slow] = nums[slow], nums[fast]
+      slow += 1
   return nums
+
+nums = [3, 1, 2, 4]
+
+print(sortArrayByParity(nums))
+
+# Time Complexity: O(n) because we traverse the array once.
+# Space Complexity: O(1) because we do not use any extra space.
