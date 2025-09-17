@@ -10,12 +10,12 @@
 # Output: 2, nums = [2,2,_,_]
 
 def removeElement(nums, val):
-    count = 0
-    for i in range(len(nums)):
-        if nums[i] != val:
-            nums[count] = nums[i]
-            count += 1
-    return count
+    slow = 0
+    for fast in range(len(nums)):
+        if nums[fast] != val:
+            nums[slow] = nums[fast]
+            slow += 1
+    return slow
 
 nums = [3,2,2,3]
 val = 3
